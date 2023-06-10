@@ -1,7 +1,0 @@
-(q0 , 00111 , X)
-(q0 , 0111 , aX)
-(q0 , 111 , aaX)
-(q0 , 11 , aX)
-(q1 , 1 , X)
-(q1 ,  , aX)
-¡Cadena Rechazada!

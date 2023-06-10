@@ -1,0 +1,9 @@
+(q0 , 000111 , X)
+(q0 , 00111 , aX)
+(q0 , 0111 , aaX)
+(q0 , 111 , aaaX)
+(q0 , 11 , aaX)
+(q1 , 1 , aX)
+(q1 ,  , X)
+(q3 , e , )
+¡Cadena Aceptada!

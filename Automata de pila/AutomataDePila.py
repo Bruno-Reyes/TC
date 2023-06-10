@@ -3,7 +3,7 @@ import os # Libreria para manejo de archivos
 
 print('Automata de pila!')  
 
-"""print('Deseas que el lenguaje se genere de forma manual o automática?') # Modo de creacion de la cadena
+print('Deseas que el lenguaje se genere de forma manual o automática?') # Modo de creacion de la cadena
 modo = int(input((" 0. Manual\n 1.Automatica\n")))
 cadena = ''
 if modo == 0: # Manual: Pedimos al usuario que introduzca la cadena
@@ -12,7 +12,7 @@ else: # Automático: Creamos la cadena con 0's y 1's (50% probabilidad por eleme
     n = random.randint(0,100000)
     cadena += '0'
     for i in range(n-1):
-        cadena += str(random.randint(0,1))"""
+        cadena += str(random.randint(0,1))
 
 # Definimos estructura "Pila
 class Pila: 
@@ -43,6 +43,11 @@ class PDA:
         self.q2 = False # Estado q2
         self.q3 = False # Estado q3
         self.stack = Pila() # Instanciamos una pila
+
+    def escribirArchivo(self,historial): 
+        with open('./Automata de pila/Historial.txt', mode='w', encoding='utf-8') as archivo: 
+            archivo.write(historial)
+        archivo.close()
 
     def evaluar(self): # Control de estados finitos
         historial = '(q0 , '+cadena+' , '+str(self.stack.imprimir())+')\n'
@@ -77,12 +82,9 @@ class PDA:
             historial += '¡Cadena Aceptada!'
         else: 
             historial += '¡Cadena Rechazada!'
-        with open('Historial.txt', mode='w', encoding='utf-8') as archivo: 
-            archivo.write(historial)
-        archivo.close()
+        self.escribirArchivo(historial)
         return self.q3
 
-cadena = '00111'
 print(cadena) # Mostramos la cadena a evaluar
 automata = PDA(cadena)  # Instanciamos el autómata con la cadena a evaluar
 print(automata.evaluar()) # Usamos el método evaluar para saber si la cadena es valida ó no 
