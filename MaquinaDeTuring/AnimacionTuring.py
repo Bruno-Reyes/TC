@@ -84,7 +84,7 @@ def animacion():
             if estado_iteracion == 'q0':
                 pygame.time.wait(3000)
             else:
-                pygame.time.wait(10)
+                pygame.time.wait(500)
             
     # Salir del programa
     pygame.quit() 
